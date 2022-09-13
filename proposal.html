@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Stack Recommendation</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h3 {
+            padding-top: 4rem;
+            text-align: center;
+        }
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 2rem;
+            width: 60%
+        }
+        P {
+            font-size: 20px;
+            text-indent: 3rem;
+            margin-left: 4rem;
+            margin-right: 4rem;
+        }
+    </style>
+</head>
+<body >
+<img src="techstack.png">
+<h3>
+    Front-end
+</h3>
+<p>
+        Beginning with the frontend, I feel that react-native is an obvious choice. With react-native, we are able to provide cross platform support to apple, android and 
+    web browsers all in one javascript codebase. This also provides the beneffit of working within the react ecosystem; being one of the most popular web frameworks
+     provides the benefit of not only having seemingly endless options for packages and SDKs but as well as debugging and testing resources. A software’s longevity
+      depends on it’s developers, and by using react, there will always be plenty of talent able to work on the application. In the case that the user loses cell 
+      signal, POI’s can still be logged using AsyncStorage and then be sent to our backend once signal is restored. To handle mapping within our frontend, I would
+       recommend using mapbox, which provides a react native SDK to implement interactive maps into our app, allowing us to show our POIs and provide features such 
+       as navigation, topographical maps, and data for trails and other natural features.
+</p>
+<h3>Data Storage</h3>
+<p>
+        In terms of data storage, this application needs to be able to efficiently store geolocation data as well as media files. Because of this I recommend a PostgreSQL 
+    database along with PostGIS, which adds support for geographic objects within a Postgres database. PostGIS also interacts well with mapbox ensuring that our location
+     data can not only be stored, but also shown on a map within our frontend. Since this application relies heavily on geographic data and the user’s location, a simpler
+      MySQL, being feature limited, would make it much more difficult to develop while only getting marginally better reliability and simplicity in return. And since 
+      this application will not be used at a massive scale, I don’t believe the extra simplicity to be necessary.
+</p>
+<h3>
+    Back-end
+</h3>
+<p>
+        Since this application doesn’t need a very complicated backend, I believe it makes more sense to utilize a backend as a service rather than developing our own
+     backend from scratch. With this, and our choice of database in mind, I would recommend using Supabase to handle our backend. Supabase already uses PostgreSQL allowing
+      for seamless integration of my proposed database architecture. On top of this, Supabase provides file storage allowing for images to be saved and quickly retrieved 
+      when we need them. Supabase has many available tools for handling all of our required backend functionality. Perhaps the most important of these included tools is
+       Supabase’s included login support, which handles authentication, authorization, as well as user management tools. Supabase provides simple APIs for interacting with 
+       whatever tools we need from our frontend. One important thing to keep in mind with Supabase is that it is still a new project and may not be considered production
+        ready for large scale applications. However, as this will be used by a small group of researchers, I do not see this being an issue.
+</p>
+</body>
+</html>
