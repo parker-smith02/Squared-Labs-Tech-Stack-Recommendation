@@ -12,7 +12,11 @@
             flex-direction: column;
         }
 
-        h3 {
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
             padding-top: 4rem;
             text-align: center;
         }
@@ -24,18 +28,22 @@
             width: 60%
         }
         P {
+            font-weight: 500;
             font-size: 20px;
-            text-indent: 3rem;
+            text-indent: 4rem;
             margin-left: 4rem;
             margin-right: 4rem;
         }
     </style>
 </head>
 <body >
+    <h1>
+        Tech Stack Recommendation
+    </h1>
 <img src="techstack.png">
-<h3>
+<h2>
     Front-end
-</h3>
+</h2>
 <p>
         Beginning with the frontend, I feel that react-native is an obvious choice. With react-native, we are able to provide cross platform support to apple, android and 
     web browsers all in one javascript codebase. This also provides the beneffit of working within the react ecosystem; being one of the most popular web frameworks
@@ -45,7 +53,7 @@
        recommend using mapbox, which provides a react native SDK to implement interactive maps into our app, allowing us to show our POIs and provide features such 
        as navigation, topographical maps, and data for trails and other natural features.
 </p>
-<h3>Data Storage</h3>
+<h2>Data Storage</h2>
 <p>
         In terms of data storage, this application needs to be able to efficiently store geolocation data as well as media files. Because of this I recommend a PostgreSQL 
     database along with PostGIS, which adds support for geographic objects within a Postgres database. PostGIS also interacts well with mapbox ensuring that our location
@@ -53,9 +61,9 @@
       MySQL, being feature limited, would make it much more difficult to develop while only getting marginally better reliability and simplicity in return. And since 
       this application will not be used at a massive scale, I don’t believe the extra simplicity to be necessary.
 </p>
-<h3>
+<h2>
     Back-end
-</h3>
+</h2>
 <p>
         Since this application doesn’t need a very complicated backend, I believe it makes more sense to utilize a backend as a service rather than developing our own
      backend from scratch. With this, and our choice of database in mind, I would recommend using Supabase to handle our backend. Supabase already uses PostgreSQL allowing
